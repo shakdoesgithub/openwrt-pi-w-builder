@@ -54,7 +54,7 @@ openssh-sftp-server
 # disabled packages
 # openssh-server
 
-FILES="rpi-W-files"
+FILES="rpi-w-files"
 
 DISABLED_SERVICES="\
 adblock acme banip bcp38 collectd ddns fwknopd https-dns-proxy \
