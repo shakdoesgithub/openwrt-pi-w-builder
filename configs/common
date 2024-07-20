@@ -62,11 +62,11 @@ kmod-usb-net-rtl8152 kmod-usb-net-sr9700
 "
 
 # USB storage auto mounting
-packages_usb_storage="
-kmod-fs-exfat kmod-fs-ext4 kmod-fs-ntfs kmod-fuse kmod-usb-storage
-kmod-usb2 kmod-usb2-pci kmod-usb3 kmod-fs-autofs4 kmod-usb-ohci kmod-usb-uhci
-block-mount blockd e2fsprogs fdisk lsblk resize2fs losetup
-"
+# packages_usb_storage="
+# kmod-fs-exfat kmod-fs-ext4 kmod-fs-ntfs kmod-fuse kmod-usb-storage
+# kmod-usb2 kmod-usb2-pci kmod-usb3 kmod-fs-autofs4 kmod-usb-ohci kmod-usb-uhci
+# block-mount blockd e2fsprogs fdisk lsblk resize2fs losetup
+# "
 
 # Total size of python-light plus python3-urllib is approximately 10MB
 # 3.1M  /usr/lib/libpython3.9.so.1.0
