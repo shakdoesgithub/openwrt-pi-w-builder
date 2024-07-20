@@ -1,0 +1,61 @@
+#!/bin/sh
+# Raspberry PI 4 configuration for openwrt-image-buildomatic
+
+# Which target CPU to build image for.
+# See targets here: https://downloads.openwrt.org/snapshots/targets
+TARGET=bcm27xx/bcm2708
+
+# Currently there is only the "rpi" build profile for this TARGET
+PROFILE="rpi"
+
+RELEASE=${RELEASE_23_05_04}
+
+# Define this if you want a larger file writable system
+# The default for RPi4 is 104 (MB)
+# Here we set it to 4096 (MB) which is almost 4GB.
+# Alas, the larger it is, the longer time it takes to create the image:
+#   1GB takes 1m54s, 2GB takes 2m14s, 4GB takes 2m56s
+#   which amounts to approx 20s extra build time per GB
+# You must lower the value if your SD-card is smaller than that (surely not)
+CONFIG_TARGET_ROOTFS_PARTSIZE=4096
+
+
+# See https://openwrt.org/packages/start
+#
+# - irqbalance package distributes hardware interrupts across
+#   processors on a multiprocessor system in order to increase performance.
+# - bcm27xx-eeprom package provides rpi-eeprom-update, rpi-eeprom-config
+#   commands for the RPi-4 eeprom
+# - netperf installs /usr/bin/netserver and is used by various speedtest scripts
+#   See https://forum.openwrt.org/t/package-to-run-speed-test-on-router/16016
+PACKAGES="
+${packages_usb_eth}
+${packages_luci_apps}
+${packages_usb_storage}
+${packages_python}
+${packages_lxc}
+bcm27xx-eeprom
+irqbalance
+ethtool
+netperf speedtest-netperf iperf3
+nmap netdiscover arp-scan arp-scan-database
+ss iftop whois
+iptables-mod-geoip
+igmpproxy
+msmtp
+-dnsmasq dnsmasq-full
+-ip-tiny ip-full
+zoneinfo-europe
+procps-ng procps-ng-watch procps-ng-pgrep procps-ng-ps procps-ng-top procps-ng-free
+curl wget rsync file htop lsof less mc tree usbutils bash diffutils libreadline
+strace
+openssh-sftp-server
+"
+# disabled packages
+# openssh-server
+
+FILES="rpi-W-files"
+
+DISABLED_SERVICES="\
+adblock acme banip bcp38 collectd ddns fwknopd https-dns-proxy \
+igmpproxy netserver sqm unbound vpn-policy-routing"

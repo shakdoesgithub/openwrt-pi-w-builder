@@ -10,7 +10,7 @@ RELEASE_18_06="18.06.9"
 RELEASE_19_07="19.07.7"
 RELEASE_21_02="21.02.3"
 RELEASE_22_03="22.03.0"
-
+RELEASE_23_05_04="23.05.4"
 # Popular Luci apps
 # This list is probably only valid for the 21.02 release
 #   - luci-theme-material has intentionally been left out (it is rather ugly)
