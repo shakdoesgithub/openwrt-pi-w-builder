@@ -34,6 +34,8 @@ ${packages_luci_apps}
 ${packages_usb_storage}
 ${packages_python}
 ${packages_lxc}
+travelmate
+luci-app-travelmate
 bcm27xx-eeprom
 irqbalance
 ethtool
