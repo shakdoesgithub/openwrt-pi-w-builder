@@ -26,7 +26,7 @@ luci-app-commands
 luci-app-ddns
 luci-app-fwknopd fwknopd
 luci-app-https-dns-proxy https-dns-proxy
-luci-app-sqm sqm-scripts sqm-scripts-extra
+luci-app-sqm sqm-scripts
 luci-app-statistics
   collectd collectd-mod-cpu collectd-mod-irq collectd-mod-thermal
   collectd-mod-network collectd-mod-sqm collectd-mod-iwinfo collectd-mod-ping
