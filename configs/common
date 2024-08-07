@@ -57,6 +57,7 @@ luci-app-https-dns-proxy
 packages_usb_eth="
 kmod-usb-core kmod-usb-net kmod-mii
 kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-cdc-ether kmod-usb-net-ipheth
+kmod-usb-gadget-eth kmod-usb-dwc2
 kmod-usb-net-kaweth kmod-usb-net-mcs7830 kmod-usb-net-pegasus kmod-usb-net-rtl8150
 kmod-usb-net-rtl8152 kmod-usb-net-sr9700
 "
